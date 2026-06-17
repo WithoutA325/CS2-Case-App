@@ -29,7 +29,7 @@ class WishlistScreen extends StatelessWidget {
               ),
               const SizedBox(height: 8),
               Text(
-                'Wejdz w szczegoly skina i dodaj go do listy obserwowanych.',
+                'Wejdz w szczegoly skina i dodaj go do listy zyczen.',
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.bodyMedium,
               ),

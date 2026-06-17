@@ -27,7 +27,15 @@ class Cs2ApiService {
           (item) => item.map((key, value) => MapEntry(key.toString(), value)),
         )
         .map(Cs2Crate.fromJson)
-        .where((crate) => crate.type == 'Case' && crate.contains.isNotEmpty)
+        .where((crate) {
+          final isCase = crate.type == 'Case';
+          // Terminale mają type: null (co nasz model zamienia na 'Crate')
+          // lub type: 'Crate' i słowo 'Terminal' w nazwie.
+          final isTerminal = crate.type == 'Crate' &&
+              crate.name.toLowerCase().contains('terminal');
+
+          return (isCase || isTerminal) && crate.contains.isNotEmpty;
+        })
         .toList();
   }
 
