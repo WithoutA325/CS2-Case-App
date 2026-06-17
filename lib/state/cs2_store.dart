@@ -6,11 +6,9 @@ import '../services/api_service.dart';
 import '../services/local_database.dart';
 
 class Cs2Store extends ChangeNotifier {
-  Cs2Store({
-    required Cs2ApiService apiService,
-    required LocalDatabase database,
-  })  : _apiService = apiService,
-        _database = database;
+  Cs2Store({required Cs2ApiService apiService, required LocalDatabase database})
+    : _apiService = apiService,
+      _database = database;
 
   final Cs2ApiService _apiService;
   final LocalDatabase _database;

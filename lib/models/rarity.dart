@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Rarity {
-  const Rarity({
-    required this.id,
-    required this.name,
-    required this.color,
-  });
+  const Rarity({required this.id, required this.name, required this.color});
 
   final String id;
   final String name;
@@ -23,7 +19,8 @@ class Rarity {
     return {
       'id': id,
       'name': name,
-      'color': '#${color.value.toRadixString(16).padLeft(8, '0').substring(2)}',
+      'color':
+          '#${color.toARGB32().toRadixString(16).padLeft(8, '0').substring(2)}',
     };
   }
 

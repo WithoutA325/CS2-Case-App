@@ -34,7 +34,9 @@ class LocalDatabase {
 
     return rawItems
         .whereType<Map>()
-        .map((item) => item.map((key, value) => MapEntry(key.toString(), value)))
+        .map(
+          (item) => item.map((key, value) => MapEntry(key.toString(), value)),
+        )
         .map(Cs2Crate.fromJson)
         .toList();
   }
@@ -70,7 +72,9 @@ class LocalDatabase {
   List<Skin> loadWishlist() {
     return wishlistBox.values
         .whereType<Map>()
-        .map((item) => item.map((key, value) => MapEntry(key.toString(), value)))
+        .map(
+          (item) => item.map((key, value) => MapEntry(key.toString(), value)),
+        )
         .map(Skin.fromJson)
         .toList();
   }

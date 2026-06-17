@@ -62,7 +62,9 @@ class Cs2Crate {
 
     return value
         .whereType<Map>()
-        .map((item) => item.map((key, value) => MapEntry(key.toString(), value)))
+        .map(
+          (item) => item.map((key, value) => MapEntry(key.toString(), value)),
+        )
         .map(Skin.fromJson)
         .toList();
   }

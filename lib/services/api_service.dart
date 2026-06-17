@@ -23,7 +23,9 @@ class Cs2ApiService {
 
     return decoded
         .whereType<Map>()
-        .map((item) => item.map((key, value) => MapEntry(key.toString(), value)))
+        .map(
+          (item) => item.map((key, value) => MapEntry(key.toString(), value)),
+        )
         .map(Cs2Crate.fromJson)
         .where((crate) => crate.type == 'Case' && crate.contains.isNotEmpty)
         .toList();
